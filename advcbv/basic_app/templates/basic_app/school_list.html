@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'basic_app/basic_app_base.html' %}
+
+{% block body_block %}
+<h1>Welcome to a List of all the schools!</h1>
+<ol>
+    {% for school in school_list %}
+    <!--The school list is already defined in the 
+    views.py  automatcally i.e python takes the 
+model and turns it into small letters and then add  _list to it. But if
+we decide to redefine it we can follow the step indicated in the views.py file-->
+    <h2><li><a href="/basic_app/{{ school.pk }}">{{ school.name }}</a></li></h2>
+    {% endfor %}
+</ol>
+{% endblock %}
